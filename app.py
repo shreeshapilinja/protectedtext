@@ -1,10 +1,11 @@
 import os
 import sqlite3 as s
+import secrets
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '9353917389'
+app.config['SECRET_KEY'] = secrets.token_hex(16)
 
 # Function to create the user database and user_info table
 def create_user_database(username):
