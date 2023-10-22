@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, {{ username }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container"> <!-- Use a container <div> -->
+        <h1>Welcome, {{ username }}</h1>
+        <form action="/dashboard/{{ username }}" method="post">
+            <textarea name="text" rows="10" cols="40">{{ text }}</textarea>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+        <form action="/logout" method="get">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+</body>
+</html>

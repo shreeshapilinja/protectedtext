@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <h1 class="center-text">Welcome to Shreesha's Protected Text <hr> Login</h1>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <h1 class="center-text">{{error}}</h1>
+	
+	<span>Can also log in using the URL, i.e., url<b>/?=username@password</b></span>
+</body>
+</html>
